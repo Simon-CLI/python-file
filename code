@@ -1,0 +1,13 @@
+import random # To generate something random
+import string # To have string
+import os     # For file pathway
+
+rm = ''.join(random.choices(string.ascii_uppercase + string.ascii_lowercase + '-', k=15)) # This create the random ascii_uppercase,lower,digits with the limit of 6 character.
+filename = rm + '.txt' # This create the text file with the random name generated above code
+
+with open(filename, 'a') as file: # This create the file ability to read, write, and seek
+    file.write("creating the file with random name.") # If code is executed correctly, you should see "creating the file with random name" inside the text file.
+
+file_path = os.path.abspath(filename) # To have the file path
+print(f"your file is: {filename}")
+print(f"your file path is: {file_path}")
